@@ -24,10 +24,10 @@ int main(){
     for(int i = 0; i < 10; i++){
         num[i] = i + 1;
     }
-    printf("%s\n", binary_search(num, 11, 10) == -1 ? "OK" : "FAILED");
-    printf("%s\n", binary_search(num, -1, 10) == -1 ? "OK" : "FAILED");
-    printf("%s\n", binary_search(num, 3, 10) == 2 ? "OK" : "FAILED");
-    printf("%s\n", binary_search(num, 1, 10) == 0 ? "OK" : "FAILED");
-    printf("%s\n", binary_search(num, 10, 10) == 9 ? "OK" : "FAILED");
+    printf("over tail test : %s\n", binary_search(num, 11, 10) == -1 ? "OK" : "FAILED");
+    printf("over head test : %s\n", binary_search(num, -1, 10) == -1 ? "OK" : "FAILED");
+    printf("normal test search : %s\n", binary_search(num, 3, 10) == 2 ? "OK" : "FAILED");
+    printf("head test : %s\n", binary_search(num, 1, 10) == 0 ? "OK" : "FAILED");
+    printf("tail test : %s\n", binary_search(num, 10, 10) == 9 ? "OK" : "FAILED");
     return 0;
 }
