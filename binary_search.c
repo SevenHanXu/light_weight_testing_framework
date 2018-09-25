@@ -2,12 +2,12 @@
 	> File Name: binary_search.c
 	> Author: 
 	> Mail: 
-	> Created Time: 二  9/25 10:19:55 2018
+	> Created Time: 二  9/25 15:21:32 2018
  ************************************************************************/
 
 #include <stdio.h>
 #include <assert.h>
-#include "test.h"
+#include "test_first.h"
 
 int binary_search(int *num, int x, int len){
     int head = 0, tail = len - 1, mid;
