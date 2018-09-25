@@ -20,17 +20,49 @@ int binary_search(int *num, int x, int len){
     return -1;
 }
 
-TEST(binary_search, head_search){
+
+int main(){
+    return 0;
+}
+
+TEST(binary_search, expect_pass_test){
     int num[10] = {0};
     for(int i = 0; i < 10; i++){
         num[i] = i + 1;
     }
     for(int j = 0; j < 10; j++){
-         ASSERT_EQ(binary_search(num, j, 10), j - 1);
+         EXPECT_EQ(binary_search(num, j, 10), j - 1);
     }
-   
+
+}
+ 
+TEST(binary_search, assert_pass_test){
+    int num[10] = {0};
+    for(int i = 0; i < 10; i++){
+        num[i] = i + 1;
+    }
+    for(int j = 0; j < 10; j++){
+        ASSERT_EQ(binary_search(num, j, 10), j - 1);
+    }
 }
 
-int main(){
-    return 0;
+TEST(binary_search, expect_fail_test){
+    int num[10] = {0};
+    for(int i = 0; i < 10; i++){
+        num[i] = i + 1;
+    }
+    for(int j = 0; j < 10; j++){
+        EXPECT_EQ(binary_search(num, j, 10), j);
+    }
 }
+
+TEST(binary_search, assert_fail_test){
+    int num[10] = {0};
+    for(int i = 0; i < 10; i++){
+        num[i] = i + 1;
+    }
+    for(int j = 0; j < 10; j++){
+        ASSERT_EQ(binary_search(num, j, 10), j - 1);
+    }
+}
+
