@@ -7,6 +7,10 @@
 
 #include<stdio.h>
 
+#define TEST(a, b){\
+    printf("%s == %s : %s\n", #a, #b, (a) == (b) ? "OK" : "FAIL");\
+}
+
 int binary_search(int *num, int x, int len){
     int head = 0, tail = len - 1, mid;
     while(head <= tail){
@@ -24,10 +28,10 @@ int main(){
     for(int i = 0; i < 10; i++){
         num[i] = i + 1;
     }
-    printf("over tail test : %s\n", binary_search(num, 11, 10) == -1 ? "OK" : "FAILED");
-    printf("over head test : %s\n", binary_search(num, -1, 10) == -1 ? "OK" : "FAILED");
-    printf("normal test search : %s\n", binary_search(num, 3, 10) == 2 ? "OK" : "FAILED");
-    printf("head test : %s\n", binary_search(num, 1, 10) == 0 ? "OK" : "FAILED");
-    printf("tail test : %s\n", binary_search(num, 10, 10) == 9 ? "OK" : "FAILED");
+    TEST(binary_search(num, -1, 10), -1);
+    TEST(binary_search(num, 11, 10), -1);
+    TEST(binary_search(num, 2, 10), 1);
+    TEST(binary_search(num, 1, 10), 0);
+    TEST(binary_search(num, 10, 10), 9);
     return 0;
 }
